@@ -1,0 +1,11 @@
+{
+  "id": "light", "scene": "Studio_Light", "label": "浅色柔光摄影棚",
+  "world_color": [0.8, 0.8, 0.8], "world_strength": 0.32,
+  "floor_color": [0.72, 0.72, 0.72], "exposure": -2.2,
+  "shadow_catcher": true, "background_srgb": 0.94,
+  "lights": [
+    {"name": "Key", "offset_FRU": [0.5, 0.65, 0.85], "watts": 42, "size": 0.75},
+    {"name": "Fill", "offset_FRU": [0.12, -0.65, 0.5], "watts": 22, "size": 0.65},
+    {"name": "Rim", "offset_FRU": [-0.7, -0.08, 0.85], "watts": 35, "size": 0.7}
+  ]
+}

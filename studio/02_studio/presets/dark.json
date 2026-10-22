@@ -1,0 +1,11 @@
+{
+  "id": "dark", "scene": "Studio_Dark", "label": "深色轮廓摄影棚",
+  "world_color": [0.8, 0.8, 0.8], "world_strength": 0.065,
+  "floor_color": [0.012, 0.012, 0.012], "exposure": -2.2,
+  "lights": [
+    {"name": "Key", "offset_FRU": [0.35, 0.6, 0.75], "watts": 30, "size": 0.65},
+    {"name": "Fill", "offset_FRU": [0.35, -0.65, 0.35], "watts": 9, "size": 0.6},
+    {"name": "Rim", "offset_FRU": [-0.65, -0.15, 0.7], "watts": 48, "size": 0.65},
+    {"name": "Top", "offset_FRU": [-0.1, 0.1, 1.0], "watts": 12, "size": 0.7}
+  ]
+}

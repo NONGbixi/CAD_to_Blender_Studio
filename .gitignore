@@ -1,0 +1,35 @@
+# Blender/Cycles render outputs, caches and logs are never committed.
+04_output/*
+!04_output/.gitkeep
+
+# CAD-imported and shot .blend files stay out of git (binary, large)
+*.blend
+*.blend1
+*.blend2
+assets/
+
+# Rendered frames, stills and video deliverables
+frames/
+*.png
+*.jpg
+*.jpeg
+*.exr
+*.mp4
+*.mkv
+*.wav
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local overrides
+.env
+*.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

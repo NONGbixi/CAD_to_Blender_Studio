@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "profile_id": "module_outline_20261021_35_v1",
+  "status": "current v02: static and 30-frame camera-motion technical validation completed",
+  "approved_date_local": "2026-10-21",
+  "approval": "还是35%吧，你整理一下一下，以便真正生成视频时按新要求",
+  "applies_to": "future module-emphasis rendering; overrides historical presentation style, never source CAD materials",
+  "style": {
+    "context_face_opacity": 0.13,
+    "edge_width_px": 0.4,
+    "reference_height_px": 1080,
+    "scale_edge_width_with_output_height": true,
+    "edge_color_srgb_hex": "#A8ADB3",
+    "edge_opacity": 0.35,
+    "hide_context_fastener_edges": true,
+    "subject_original_materials": true,
+    "subject_opacity": 1.0,
+    "defocus_context": false,
+    "blur_outline": false,
+    "stack_overlapping_outline_opacity": false
+  },
+  "edge_selection": {
+    "mechanism": "filter existing derived CURVE edges, then project once into screen space",
+    "keep_silhouettes": true,
+    "major_crease_angle_degrees": 65,
+    "remove_back_facing_edges": true,
+    "remove_occluded_edges": true,
+    "remove_coplanar_triangulation": true,
+    "small_closed_feature_loop_max_diagonal_m": 0.016,
+    "ray_distance_tolerance_m": 0.00018,
+    "antialias_supersampling": 10,
+    "occlusion_sampling": "current-frame evaluated geometry; screen segments split at <=8px; midpoint visibility per subsegment",
+    "delete_or_decimate_source_geometry": false,
+    "duplicate_freestyle_lineart_wireframe": false,
+    "max_visibility_segment_px": 8
+  },
+  "fasteners_focus": {
+    "outer_context_contour_only": true,
+    "internal_context_edges": false,
+    "visual_edge_amount_target": 0.1,
+    "context_face_opacity": 0.13,
+    "note": "Current v02 fasteners-focus static render validated at 1080p/512 samples; context faces Alpha=0.13, outer contour only. Historical 0.05 is not restored."
+  },
+  "preserve": [
+    "source mesh topology and coordinates",
+    "component transforms and hierarchy",
+    "confirmed source materials and colors",
+    "existing cameras and lights",
+    "actual nine-module membership"
+  ],
+  "module_mapping": "03_director/module_groups_v02.json",
+  "source_project": "02_studio/studio_emphasis.blend",
+  "source_project_sha256": "22847ef7544e5e68c5550b94df3f0308263c3af04f07a5516c4f7744f08e6e64",
+  "pipeline": [
+    "evaluate current frame and constraints",
+    "restore active module original opaque materials; apply context face override",
+    "update evaluated geometry visibility and BVH for current frame",
+    "select and project current-frame outlines",
+    "hide derived 3D outline objects in surface render",
+    "render and denoise Cycles surfaces and subject",
+    "composite a single antialiased outline mask at 35%",
+    "composite typography",
+    "save validated PNG sequence",
+    "encode H.264 MP4 with FFmpeg"
+  ],
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "video_codec": "H.264",
+    "container": "MP4",
+    "render_to_png_first": true,
+    "future_4k": [
+      3840,
+      2160
+    ],
+    "edge_width_at_4k_px": 0.8
+  },
+  "quality_validation": {
+    "validated_modules": [
+      "gimbal",
+      "extension",
+      "battery",
+      "fasteners",
+      "vision"
+    ],
+    "validated_views": [
+      "original",
+      "stage_1_rear_45",
+      "module_detail",
+      "jy62_macro"
+    ],
+    "validated_studios": [
+      "light",
+      "dark"
+    ],
+    "review_samples": 1024,
+    "review_denoiser": "OPENIMAGEDENOISE",
+    "production_sample_count": "choose from actual noise/time test; 1024 is review evidence, not a production default",
+    "video_test_required_before_production": true,
+    "suggested_video_test_frames": 30,
+    "video_test_has_been_run": true,
+    "checks": [
+      "0.4px lines remain stable during dolly/orbit",
+      "no line popping, broken segments or back-edge leakage",
+      "no transparency shimmer or denoising flicker",
+      "moving components and their occlusion update every frame",
+      "no double outline",
+      "source model and protected camera/light state unchanged",
+      "retest time, GPU memory and RAM with this pipeline"
+    ],
+    "unsupported_claim": "static approval does not prove temporal stability or final video render cost",
+    "validated_module_membership": [
+      "wheels",
+      "gimbal",
+      "lift",
+      "extension",
+      "gripper",
+      "vision",
+      "turntable",
+      "battery",
+      "fasteners"
+    ],
+    "video_test_frames": 30,
+    "video_test_resolution": [
+      1920,
+      1080
+    ],
+    "video_test_samples": 512,
+    "video_test_job": "v02_gimbal_orbit_1080",
+    "mechanical_animation_authored": false,
+    "evaluated_geometry_rigid_transform_test_passed": true
+  },
+  "rejected_trial": {
+    "edge_opacity": 0.5,
+    "file": "04_output/review/非主体轮廓优化_20261021/05_云台_整车后方45度_细线50.png",
+    "status": "not selected; retain for history only"
+  },
+  "legacy": {
+    "module_groups_style": "historical only: faces 0.08, edges 1.0, fasteners-focus faces 0.05",
+    "existing_blend_resaved": false,
+    "render_ps1_module_outline_integration": false,
+    "instruction": "Legacy v01 render.ps1/build.ps1 use historical projects. Current v02 uses render_v02.ps1 with per-frame evaluated visibility and 35% composited outlines; a 30-frame camera-orbit test has passed. New mechanical animations still require their own motion validation.",
+    "current_renderer": "render_v02.ps1 -> run_outline_render.py -> render_outline_job.py"
+  },
+  "model_version": "sync_v02_442",
+  "source_model": "01_materials/model/model.blend",
+  "source_model_sha256": "1b3c7d8d03329ba4c005fda74c1296d99716c05d14addb5ba7ee653d2deb23cf",
+  "module_context_overrides": {
+    "battery": {
+      "fully_transparent_root_source_names": [
+        "gimbal_bracket_object_name",
+        "gimbal_assembly_object_name"
+      ],
+      "include_descendants": true,
+      "hide_their_outlines": true,
+      "exclude_from_occlusion_bvh": true,
+      "protected_context_alpha": {
+        "base_plate_object_name": 0.13
+      },
+      "scope": "all battery/electronics emphasis shots, including JY62 detail and future video",
+      "approval": "电池电控模块的虚化把云台托架和云台装配体全透明吧，底板还是0.13；这个设置保存一下，真正做视频时要用",
+      "supersedes": "Earlier optional fully transparent base plate for JY62 detail is not applied in battery shots."
+    }
+  }
+}

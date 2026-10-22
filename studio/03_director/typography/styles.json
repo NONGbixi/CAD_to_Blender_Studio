@@ -1,0 +1,30 @@
+{
+  "font": "01_materials/fonts/NotoSansSC-Medium.otf",
+  "reference_size": [1920, 1080],
+  "safe_margin": 0.07,
+  "colors": {"light": {"primary": "#20252B", "secondary": "#60666F"}, "dark": {"primary": "#F3F4F5", "secondary": "#B6BDC7"}},
+  "styles": {
+    "institution_title": {"size": 76, "tracking": 4, "line_height": 1.3},
+    "function_subtitle": {"size": 27, "tracking": 2, "line_height": 1.5},
+    "technical_parameter": {"size": 20, "tracking": 1.0, "line_height": 1.5},
+    "end_product_name": {"size": 54, "tracking": 7, "line_height": 1.4}
+  },
+  "motion": {"fade_in_frames": 7, "fade_out_frames": 7, "vertical_pixels": 18, "easing": "smoothstep"},
+  "templates": {
+    "studio_validation": [
+      {"text": "STUDIO / 02", "style": "technical_parameter", "x": 0.07, "y": 0.345, "color": "secondary", "align": "left"},
+      {"text": "ACME", "style": "institution_title", "x": 0.07, "y": 0.405, "color": "primary", "align": "left"},
+      {"text": "产品摄影棚验证", "style": "function_subtitle", "x": 0.07, "y": 0.52, "color": "secondary", "align": "left"},
+      {"text": "Cycles · 30 FPS", "style": "technical_parameter", "x": 0.07, "y": 0.60, "color": "secondary", "align": "left"}
+    ],
+    "mechanism": [
+      {"text": "麦轮", "style": "institution_title", "x": 0.07, "y": 0.4, "color": "primary", "align": "left"},
+      {"text": "结构与轮廓光测试", "style": "function_subtitle", "x": 0.07, "y": 0.52, "color": "secondary", "align": "left"},
+      {"text": "85 mm / Cycles", "style": "technical_parameter", "x": 0.07, "y": 0.60, "color": "secondary", "align": "left"}
+    ],
+    "ending": [
+      {"text": "ACME · 智能物流小车", "style": "end_product_name", "x": 0.5, "y": 0.43, "color": "primary", "align": "center"},
+      {"text": "整机名称排版模板", "style": "function_subtitle", "x": 0.5, "y": 0.54, "color": "secondary", "align": "center"}
+    ]
+  }
+}

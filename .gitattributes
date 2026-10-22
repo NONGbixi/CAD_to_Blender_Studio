@@ -1,0 +1,14 @@
+# Normalise line endings so the repo stays LF everywhere (Windows checkouts included).
+* text=auto eol=lf
+
+*.py    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+
+# Binary assets that may be added locally
+*.blend  binary
+*.blend1 binary
+*.png    binary
+*.jpg    binary
+*.exr    binary
+*.mp4    binary
